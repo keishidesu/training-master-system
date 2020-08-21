@@ -6,7 +6,7 @@ const { Sequelize } = sql
 const model_postfix = '.model.js'
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: './server/db/data.sqlite',
+  storage: './server/db/TrainingMaster.db',
   logging: (logging === 'true') ? console.log : false
 })
 
@@ -20,6 +20,7 @@ fs
     })
     const table_name = file.slice(0, -model_postfix.length)
     sequelize.define(table_name, model, { timestamps: false, tableName: table_name })
+
     sequelize.models[table_name].sync()
     console.log(`Imported model: ${table_name}`)
   })

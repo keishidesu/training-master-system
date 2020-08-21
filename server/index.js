@@ -4,6 +4,11 @@ import express from 'express'
 import body_parser from 'body-parser'
 import { databaseConnectTest } from './db.js'
 import { port } from './config.js'
+//const jwt = require(jsonwebtoken)
+import jwt from 'jsonwebtoken'
+// import bcrypt from 'bcrypt'
+// import auth from 'auth'
+// import db from 'db.config'
 
 const server = express()
 
@@ -46,6 +51,10 @@ server.all('/:param', (req, res) => {
   } else {
     res.status(405).send('Unsupported method')
   }
+})
+
+server.get("/", (req, res) => {
+  res.json({ message: "Testing." });
 })
 
 /* Test database connectivity */

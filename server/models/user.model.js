@@ -2,9 +2,9 @@
  * User model
  */
 
-import sql from 'sequelize'
-const { DataTypes } = sql
-
+import sql from 'sequelize';
+const { DataTypes } = sql;
+ 
 export default {
   id: {
     type: DataTypes.BIGINT,
@@ -22,9 +22,5 @@ export default {
   name: {
     type: DataTypes.TEXT,
     allowNull: false
-  },
-  type: {
-    type: DataTypes.INTEGER,
-    allowNull: false
   }
-}
+};
