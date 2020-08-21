@@ -3,17 +3,12 @@ import cors from 'cors'
 import express from 'express'
 import body_parser from 'body-parser'
 import { databaseConnectTest } from './db.js'
-import { port } from './config.js'
-//const jwt = require(jsonwebtoken)
-import jwt from 'jsonwebtoken'
-// import bcrypt from 'bcrypt'
-// import auth from 'auth'
-// import db from 'db.config'
+import { port } from './config.js';
 
-const server = express()
+const server = express();
 
-const targets = ['post', 'delete', 'get', 'put']
-server.targets = {}
+const targets = ['post', 'delete', 'get', 'put'];
+server.targets = {};
 
 /* Importing all API routes */
 for (const target of targets) {
@@ -29,14 +24,14 @@ for (const target of targets) {
       if (!server.targets[target]) server.targets[target] = {}
       server.targets[target][name] = controller
       console.log(`Imported API: ${target}/${name}`)
-    })
+    });
 }
 
-server.use(body_parser.json())
-server.use(body_parser.urlencoded({ extended: true }))
-server.use(express.urlencoded({ extended: true }))
-server.use(express.json())
-server.use(cors())
+server.use(body_parser.json());
+server.use(body_parser.urlencoded({ extended: true }));
+server.use(express.urlencoded({ extended: true }));
+server.use(express.json());
+server.use(cors());
 
 /* Handling incoming requests */
 server.all('/:param', (req, res) => {
@@ -51,14 +46,14 @@ server.all('/:param', (req, res) => {
   } else {
     res.status(405).send('Unsupported method')
   }
-})
+});
 
 server.get("/", (req, res) => {
   res.json({ message: "Testing." });
-})
+});
 
 /* Test database connectivity */
 databaseConnectTest()
 server.listen(port, () => {
   console.log(`API listening at port ${port}`)
-})
+});
