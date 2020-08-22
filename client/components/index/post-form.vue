@@ -1,35 +1,36 @@
 <template>
-  <div class="submit-form">
-    <div v-if="!submitted">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input
+  <div>
+    <b-form @submit="savePost">
+      <b-form-group
+        id="getTitle"
+        label="Title: "
+        label-for="title"
+      >
+        <b-form-input
           id="title"
-          v-model="post.title"
+          v-model="title"
           type="text"
-          class="form-control"
-          name="title"
           required
-        >
-      </div>
+          placeholder="Enter Title"
+        />
+      </b-form-group>
 
-      <div class="form-group">
-        <label for="content">Content</label>
-        <input
-          id="content"
-          v-model="post.content"
-          class="form-control"
-          name="content"
-          required
-        >
-      </div>
-      <button @click="savePost" class="btn btn-success">Submit</button>
-    </div>
+      <b-form-group
+        id="getMaterial"
+        label="Material: "
+        label-for="material"
+      >
+        <b-form-file
+          v-model="file"
+          :state="Boolean(file)"
+          placeholder="Choose a file or drop it here"
+          drop-placeholder="Drop file here..."
+        />
+      </b-form-group>
+      <div class="mt-3">Selected file: {{ file ? file.name: '' }}</div>
 
-    <div v-else>
-      <h4>Successful</h4>
-      <button class="btn btn-success" @click="newPost">Add new Materials</button>
-    </div>
+      <b-button type="submit" variant="primary">Submit</b-button>
+    </b-form>
   </div>
 </template>
 
@@ -40,34 +41,24 @@ export default {
   name: 'addPost',
   data () {
     return {
-      post: {
-        title: '',
-        content: ''
-      },
-      submitted: false
+      title: '',
+      file: null
     }
   },
   methods: {
     savePost () {
       const data = {
-        title: this.post.title,
-        content: this.post.content
+        title: this.title,
+        content: this.file
       }
 
       MaterialDataService.create(data)
         .then((response) => {
-          this.post.id = response.data.id
           console.log(response.data)
-          this.submitted = true
         })
         .catch((err) => {
           console.log(err)
         })
-    },
-
-    newPost () {
-      this.submitted = false
-      this.post = {}
     }
   }
 }
