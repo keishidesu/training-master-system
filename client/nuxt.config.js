@@ -17,8 +17,15 @@ export default {
   ],
   components: true,
   buildModules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/fontawesome'
   ],
+  fontawesome: {
+    icons: {
+      solid: true,
+      brands: true
+    }
+  },
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios'
