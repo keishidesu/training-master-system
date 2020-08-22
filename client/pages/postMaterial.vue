@@ -6,6 +6,7 @@
 
 <script>
 import postForm from '../components/index/post-form'
+
 export default {
   components: {
     postForm

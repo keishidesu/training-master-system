@@ -11,11 +11,6 @@
   </div>
 </template>
 
-<script>
-export default {
-}
-</script>
-
 <style>
 .container {
   margin: 0 auto;
@@ -25,7 +20,6 @@ export default {
   align-items: center;
   text-align: center;
 }
-
 body {
   background-color: rgb(69, 177, 247);
 }

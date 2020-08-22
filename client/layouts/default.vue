@@ -1,8 +1,18 @@
 <template>
   <div>
     <Nuxt />
+    <TheSideNav />
   </div>
 </template>
+
+<script>
+import TheSideNav from '../components/TheSideNav'
+export default {
+  components: {
+    TheSideNav
+  }
+}
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
