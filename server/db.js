@@ -6,7 +6,7 @@ const { Sequelize } = sql
 const model_postfix = '.model.js'
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: './server/db/TrainingMaster.db',
+  storage: './db/TrainingMaster.db',
   logging: (logging === 'true') ? console.log : false
 })
 

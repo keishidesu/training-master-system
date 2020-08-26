@@ -14,6 +14,7 @@ export default {
     ]
   },
   css: [
+    './assets/styles.css'
   ],
   components: true,
   buildModules: [

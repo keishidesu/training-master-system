@@ -13,6 +13,9 @@
         Submit
       </button>
     </b-row>
+    <b-row class="justify-content-center mt-4">
+      <p>Need Help? <a href="/help">Click here</a></p>
+    </b-row>
   </b-form>
 </template>
 

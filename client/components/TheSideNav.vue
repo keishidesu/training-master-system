@@ -38,7 +38,7 @@ export default {
         {
           href: '/profile',
           title: 'Profile',
-          icon: 'fas fa-address-card'
+          icon: 'fas fa-user-circle'
         },
         {
           href: '/course',
@@ -56,6 +56,28 @@ export default {
           href: '/feeback',
           title: 'Feedback',
           icon: 'fas fa-info-circle'
+        },
+        {
+          href: '/settting',
+          title: 'Setting',
+          icon: 'fas fa-cogs',
+          child: [
+            {
+              href: '/setting/editProfile',
+              title: 'Edit Profile',
+              icon: 'fas fa-id-card'
+            },
+            {
+              href: '/setting/editPassword',
+              title: 'Change Password',
+              icon: 'fas fa-lock'
+            }
+          ]
+        },
+        {
+          href: '/help',
+          title: 'Help',
+          icon: 'fas fa-question'
         }
       ],
       collapsed: true

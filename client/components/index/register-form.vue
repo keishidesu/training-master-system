@@ -21,6 +21,9 @@
           Submit
         </button>
       </b-row>
+      <b-row class="justify-content-center mt-4">
+        <p>Need Help? <a href="/help">Click here</a></p>
+      </b-row>
     </b-form>
     <div v-if="error" class="alert alert-danger">
       <p>{{ errorMessage }}</p>

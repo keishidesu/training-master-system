@@ -1,32 +1,17 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">Training Master System
-      </h1>
+      <img class="vertical-center" src="../assets/Logo.png" alt="Training Master System">
       <div class="links">
-        <nuxt-link to="/register_login">Register Or Login</nuxt-link>
-        <nuxt-link to="/postMaterial">postMaterial</nuxt-link>
+        <a href="/register_login">Register Or Login</a>
+        <a href="/postMaterial">postMaterial</a>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-}
-</script>
-
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-body {
-  background-color: rgb(69, 177, 247);
-}
+  /* #logo{
+    display: flex;
+  } */
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img id="smallLogo" src="../assets/Logo.png" alt="Training Master System">
     <Nuxt />
     <TheSideNav />
   </div>
@@ -15,22 +16,14 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}
-
-body,html {
-  height: 100%;
-}
-
-.border-round {
-  border-radius: 25px;
-}
-
-.bg-secondary {
-  background-color: rgb(69, 177, 247) !important;
-}
+  .bg-secondary {
+    background-color: rgb(69, 177, 247) !important;
+  }
+  #smallLogo {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    max-width: 10%;
+    height: auto;
+  }
 </style>

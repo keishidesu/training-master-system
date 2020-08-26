@@ -18,20 +18,10 @@ import AuthTab from '~/components/index/auth-tabs'
 import Title from '~/components/text/title'
 
 export default {
+  layout: 'registerLayout',
   components: {
     AuthTab,
     Title
   }
 }
 </script>
-
-<style>
-.vertical-center {
-  padding-top: 10rem;
-  padding-bottom: 15rem;
-}
-
-body {
-  background-color: rgb(69, 177, 247);
-}
-</style>
