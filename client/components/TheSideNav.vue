@@ -46,7 +46,7 @@ export default {
           icon: 'fas fa-book',
           child: [
             {
-              href: '/feedback/discussion-board',
+              href: '/discussion',
               title: 'Discussion Board',
               icon: 'fas fa-newspaper'
             }

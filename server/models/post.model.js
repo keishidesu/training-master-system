@@ -9,8 +9,8 @@ export default {
   id: {
     type: DataTypes.BIGINT,
     allowNull: false,
-    primaryKey: true,
-    autoIncrement: true
+    autoIncrement: true,
+    primaryKey: true
   },
   title: {
     type: DataTypes.TEXT,

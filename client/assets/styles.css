@@ -10,7 +10,6 @@ body,html {
 
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -23,8 +22,20 @@ body {
 }
 
 .vertical-center {
-  padding-top: 10rem;
-  padding-bottom: 15rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 

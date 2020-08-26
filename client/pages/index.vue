@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <img class="vertical-center" src="../assets/Logo.png" alt="Training Master System">
+      <img class="center" src="../assets/Logo.png" alt="Training Master System">
       <div class="links">
         <a href="/register_login">Register Or Login</a>
         <a href="/postMaterial">postMaterial</a>
@@ -11,7 +11,4 @@
 </template>
 
 <style>
-  /* #logo{
-    display: flex;
-  } */
 </style>
