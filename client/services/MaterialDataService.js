@@ -13,6 +13,10 @@ class MaterialDataService {
     return http.post('/post', data)
   }
 
+  uploadPost (avatar) {
+    return http.post('/post-upload', avatar)
+  }
+
   update (id, data) {
     return http.put(`/post/${id}`, data)
   }

@@ -1,3 +1,4 @@
+
 /**
  * Post model
  */
@@ -16,8 +17,11 @@ export default {
     type: DataTypes.TEXT,
     allowNull: false
   },
-  content: {
-    type: DataTypes.BLOB,
+  desc: {
+    type: DataTypes.TEXT
+  },
+  fileName: {
+    type: DataTypes.TEXT,
     allowNull: false
   }
 }

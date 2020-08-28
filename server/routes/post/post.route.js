@@ -3,7 +3,7 @@ import {models} from '../../db.js';
 const {post} = models;
 
 export default (req, res) => {
-    if(!req.body.title || !req.body.content){
+    if(!req.body.title || !req.body.fileName){
         res.status(400).send({
             message: "Content cannot be empty!"
         });
@@ -13,7 +13,8 @@ export default (req, res) => {
     //post Material
     const Material = {
         title: req.body.title,
-        content: req.body.content
+        desc: req.body.desc,
+        fileName: req.body.fileName
     };
 
     //save post in database

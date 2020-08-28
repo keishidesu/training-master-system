@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import postForm from '../components/index/post-form'
+import postForm from '../components/post/post-form'
 
 export default {
   components: {

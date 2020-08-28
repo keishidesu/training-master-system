@@ -4,6 +4,7 @@ import express from 'express'
 import body_parser from 'body-parser'
 import { databaseConnectTest } from './db.js'
 import { port } from './config.js';
+import router from './routes/file.routes.js';
 
 const server = express();
 
@@ -32,6 +33,7 @@ server.use(body_parser.urlencoded({ extended: true }));
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use(cors());
+server.use("/", router);
 
 /* Handling incoming requests */
 server.all('/:param', (req, res) => {
@@ -47,6 +49,7 @@ server.all('/:param', (req, res) => {
     res.status(405).send('Unsupported method')
   }
 });
+
 
 server.get("/", (req, res) => {
   res.json({ message: "Testing." });

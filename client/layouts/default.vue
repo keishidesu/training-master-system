@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="outline">
     <img id="smallLogo" src="../assets/Logo.png" alt="Training Master System">
     <Nuxt />
     <TheSideNav />
@@ -25,5 +25,8 @@ export default {
     right: 0px;
     max-width: 10%;
     height: auto;
+  }
+  #outline {
+    margin-left: 50px;
   }
 </style>
