@@ -5,10 +5,6 @@ class MaterialDataService {
     return http.get('/post')
   }
 
-  get (id) {
-    return http.get(`post/${id}`)
-  }
-
   create (data) {
     return http.post('/post', data)
   }

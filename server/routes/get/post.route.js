@@ -4,9 +4,7 @@ const {post} = models;
 
 export default (req, res) => {
 
-    post.findAll({
-        attributes: ['id', 'title', 'desc', 'fileName']
-    })
+    post.findAll()
         .then(data => {
             res.send(data);
         })

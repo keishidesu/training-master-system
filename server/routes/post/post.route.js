@@ -14,7 +14,8 @@ export default (req, res) => {
     const Material = {
         title: req.body.title,
         desc: req.body.desc,
-        fileName: req.body.fileName
+        fileName: req.body.fileName,
+        content: req.body.content
     };
 
     //save post in database

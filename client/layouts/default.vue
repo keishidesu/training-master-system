@@ -27,6 +27,7 @@ export default {
     height: auto;
   }
   #outline {
-    margin-left: 50px;
+    margin: 1.5em;
+    margin-left: 5em;
   }
 </style>

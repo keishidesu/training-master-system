@@ -23,5 +23,9 @@ export default {
   fileName: {
     type: DataTypes.TEXT,
     allowNull: false
+  },
+  content: {
+    type: DataTypes.BLOB("long"),
+    allowNull: false
   }
 }
