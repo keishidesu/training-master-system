@@ -11,7 +11,7 @@
       </b-col>
     </b-row>
     <p>Temporarily here for nav</p>
-    <a href='/home'>Homepage after login</a>
+    <a href="/home">Homepage after login</a>
   </b-container>
 </template>
 

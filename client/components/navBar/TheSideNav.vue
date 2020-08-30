@@ -57,7 +57,7 @@ export default {
           ]
         },
         {
-          href: '/feeback',
+          href: '/feedback',
           title: 'Feedback',
           icon: 'fas fa-info-circle'
         },
