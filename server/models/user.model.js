@@ -23,5 +23,8 @@ export default {
   name: {
     type: DataTypes.TEXT,
     allowNull: false
+  },
+  type: {
+    type: DataTypes.CHAR
   }
 };

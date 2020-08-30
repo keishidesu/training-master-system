@@ -30,7 +30,7 @@ export default {
           title: 'Training Master System'
         },
         {
-          href: '/',
+          href: '/home',
           title: 'Home',
           icon: 'fas fa-home'
         },

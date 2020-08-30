@@ -5,6 +5,7 @@ import body_parser from 'body-parser'
 import { databaseConnectTest } from './db.js'
 import { port } from './config.js';
 import postDownload from './routes/get/postDownload.js';
+import router from './routes/auth/auth.js';
 
 const server = express();
 
@@ -33,6 +34,7 @@ server.use(body_parser.urlencoded({ extended: true }));
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use(cors());
+server.use('/', router);
 
 /* Handling incoming requests */
 server.all('/:param', (req, res) => {

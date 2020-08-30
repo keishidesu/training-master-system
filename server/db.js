@@ -21,7 +21,7 @@ fs
     const table_name = file.slice(0, -model_postfix.length)
     sequelize.define(table_name, model, { timestamps: false, tableName: table_name })
 
-    sequelize.models[table_name].sync({force: true})
+    sequelize.models[table_name].sync({alter: true})
     console.log(`Imported model: ${table_name}`)
   })
 
