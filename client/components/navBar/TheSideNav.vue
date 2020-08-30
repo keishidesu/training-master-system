@@ -19,7 +19,6 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import { SidebarMenu } from 'vue-sidebar-menu'
 export default {
-  name: 'App',
   components: {
     SidebarMenu
   },
@@ -49,6 +48,11 @@ export default {
               href: '/discussion',
               title: 'Discussion Board',
               icon: 'fas fa-newspaper'
+            },
+            {
+              href: '/postMaterial',
+              title: 'Material',
+              icon: 'fas fa-file'
             }
           ]
         },

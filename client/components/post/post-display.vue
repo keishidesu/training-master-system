@@ -11,13 +11,27 @@
         {{ post.desc }}
       </b-list-group-item>
     </b-list-group>
+    <!-- Should only be displayed for the trainer -->
+    <b-button-group class="mt-2">
+      <b-button @click="deleteAll">Delete All</b-button>
+      <b-button v-b-modal.postFormModal>
+        Add Material
+      </b-button>
+    </b-button-group>
+    <b-modal id="postFormModal" hide-footer title="Add Material">
+      <postForm />
+    </b-modal>
   </b-container>
 </template>
 
 <script>
 import MaterialDataService from '../../services/MaterialDataService'
+import postForm from './post-form'
 export default {
   name: 'MaterialList',
+  components: {
+    postForm
+  },
   data () {
     return {
       posts: [],
@@ -41,6 +55,28 @@ export default {
           console.log(err)
         })
     },
+    deleteAll () {
+      const dltConfirm = confirm('Are you sure to delete all materials?')
+      if (dltConfirm) {
+        MaterialDataService.deleteAll()
+          .then((res) => {
+            this.makeToast('Success!', 'Materials have been deleted', 'success')
+            this.refreshList()
+          })
+          .catch((err) => {
+            console.log(err)
+            this.makeToast('Error while deleting Material', err, 'danger')
+          })
+      }
+    },
+    makeToast (title, message, variant) {
+      this.$bvToast.toast(message, {
+        title,
+        variant,
+        autoHideDelay: 2500,
+        appendToast: true
+      })
+    },
     refreshList () {
       this.retrieveMaterials()
       this.currentPost = null
@@ -62,6 +98,9 @@ export default {
         link.setAttribute('download', post.fileName)
         document.body.appendChild(link)
         link.click()
+        this.makeToast('Downloading...', 'Please wait to download', 'success')
+      }).catch((err) => {
+        this.makeToast(`Error occurred while downloading material with id = ${this.id}`, err, 'danger')
       })
     }
   }

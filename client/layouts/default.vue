@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TheSideNav from '../components/TheSideNav'
+import TheSideNav from '../components/navBar/TheSideNav'
 export default {
   components: {
     TheSideNav
